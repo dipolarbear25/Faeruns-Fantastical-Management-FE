@@ -1,40 +1,37 @@
-// import { Button } from 'react-bootstrap';
-// import { useEffect, useState } from 'react';
-// import Link from 'next/link';
-// import { useAuth } from '../utils/context/authContext';
-// import { getArt } from '../api/artData';
-// import ArtCard from '../components/ArtCard';
+import { Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useAuth } from '../utils/context/authContext';
+import { getCampaign } from '../api/CampaignAPI';
+import CmapaignCard from '../components/campaignCard';
 
-// function Home() {
-//   const [art, setArt] = useState([]);
+function Home() {
+  const [campaign, setCampaign] = useState([]);
 
-//   // TODO: Get user ID using useAuth Hook
-//   const { user } = useAuth();
-//   console.warn(user);
+  const { user } = useAuth();
+  console.warn(user);
 
-//   // TODO: create a function that makes the API call to get all the books
-//   const getAllTheArt = () => {
-//     getArt().then(setArt);
-//   };
-//   console.warn(art);
-//   // TODO: make the call to the API to get all the books on component render
-//   useEffect(() => {
-//     getAllTheArt();
-//   }, []);
-//   return (
-//     <div className="text-center my-4">
-//       <Link href="/myArt/new" passHref>
-//         <Button style={{ background: 'green' }}>Add Artwork</Button>
-//       </Link>
-//       <div className="d-flex flex-wrap">
-//         {/* TODO: map over art here using ArtCard component */}
-//         {art.map((arts) => (
-//           <ArtCard key={art.id} artObj={arts} onUpdate={getAllTheArt} />
-//         ))}
-//       </div>
+  const getAllTheCampaigns = () => {
+    getCampaign().then(setCampaign);
+  };
+  console.warn(campaign);
 
-//     </div>
-//   );
-// }
+  useEffect(() => {
+    getAllTheCampaigns();
+  }, []);
+  return (
+    <div className="text-center my-4">
+      <Link href="/myArt/new" passHref>
+        <Button style={{ background: 'green' }}>Add Artwork</Button>
+      </Link>
+      <div className="d-flex flex-wrap">
+        {campaign.map((campaigns) => (
+          <CmapaignCard key={campaign.id} campaignObj={campaigns} onUpdate={getAllTheCampaigns} />
+        ))}
+      </div>
 
-// export default Home;
+    </div>
+  );
+}
+
+export default Home;
