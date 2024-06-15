@@ -2,13 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { getSingleCampaign } from '../../api/CampaignAPI';
-// import TagCard from '../../components/TagCard';
+
 export default function ViewCampaign() {
   const [campaignDetails, setCampaignDetails] = useState({});
   const router = useRouter();
-  // TODO: grab firebaseKey from url
   const { id } = router.query;
-  // TODO: make call to API layer to get the data
+
   useEffect(() => {
     getSingleCampaign(id).then(setCampaignDetails);
     getSingleCampaign(id).then(setCampaignDetails);

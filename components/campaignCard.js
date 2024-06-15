@@ -6,8 +6,6 @@ import Link from 'next/link';
 import { deleteCampaign } from '../api/CampaignAPI';
 
 function CampaignCard({ campObj, onUpdate }) {
-  // FOR DELETE, WE NEED TO REMOVE THE ART AND HAVE THE VIEW RERENDER,
-  // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE ART
   const deleteThisCampaign = () => {
     if (window.confirm(`Delete ${campObj.name}?`)) {
       deleteCampaign(campObj.id).then(() => onUpdate());
