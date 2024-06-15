@@ -75,22 +75,6 @@ function CampaignForm({ campObj }) {
         />
       </FloatingLabel>
 
-      {/* <FloatingLabel controlId="floatingTextarea" label="Description" className="mb-3">
-        <Form.Control as="textarea" placeholder="Description" style={{ height: '100px' }} name="description" value={formInput.description} onChange={handleChange} required />
-      </FloatingLabel> */}
-
-      {/* Checkbox section for tags */}
-      {/* <div>
-        <b>Tags: </b>
-        {characters.map((tag) => (
-          <label key={tag.id}>
-            <input type="checkbox" value={tag.id} onChange={handleChange} checked={formInput.tagIds.includes(tag.id)} />
-            {tag.name}
-          </label>
-        ))}
-      </div> */}
-
-      {/* SUBMIT BUTTON */}
       <Button type="submit">{campObj.id ? 'Update' : 'Create'} Campaign</Button>
     </Form>
   );

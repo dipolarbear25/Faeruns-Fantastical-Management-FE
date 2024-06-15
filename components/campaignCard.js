@@ -22,11 +22,6 @@ function CampaignCard({ campObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{campObj.name}</Card.Title>
         <Card.Text>DM: {campObj.dmName}</Card.Text>
-        {/* <Card.Text>{campObj.playerCharacters?.map((tag) => (
-          <span key={tag.tag.id}>{tag.tag.name} </span>
-        ))}
-        </Card.Text> */}
-        {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
         <Link href={`/myCampaign/${campObj.id}`} passHref>
           <Button style={{ background: 'teal' }} variant="primary" className="m-2">VIEW</Button>
         </Link>
