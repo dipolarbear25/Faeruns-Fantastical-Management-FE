@@ -16,7 +16,7 @@ const getCampaign = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: DELETE ART
+// delete campaign
 const deleteCampaign = (id) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/api/deleteCampaign/${id}`, {
     method: 'DELETE',
@@ -29,7 +29,7 @@ const deleteCampaign = (id) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: GET SINGLE ART
+// get single campaign
 const getSingleCampaign = (id) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/api/singleCampaign/${id}`, {
     method: 'GET',
@@ -42,7 +42,7 @@ const getSingleCampaign = (id) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: CREATE ART
+// create campaign
 const createCampaign = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/api/createCampaign`, {
     method: 'POST',
@@ -56,7 +56,7 @@ const createCampaign = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: UPDATE ART
+// update campaign
 const updateCampaign = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/api/updateCampaign/${payload.id}`, {
     method: 'PATCH',

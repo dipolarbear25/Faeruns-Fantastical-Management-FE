@@ -2,20 +2,21 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-//get all characters
-const getCharacters = () => new Promise((resolve, reject) => {
-    fetch(`${endpoint}/api/allCharacters`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => resolve(Object.values(data)))
-      .catch(reject);
-  });
+// get all characters
 
-//delete characters
+const getCharacters = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/api/allCharacters`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+
+// delete characters
 const deleteCharacter = (id) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/api/deleteCharacter/${id}`, {
     method: 'DELETE',
@@ -28,7 +29,7 @@ const deleteCharacter = (id) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-//get single character
+// get single character
 const getSingleCharacter = (id) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/api/singleCharacter/${id}`, {
     method: 'GET',
@@ -41,7 +42,7 @@ const getSingleCharacter = (id) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-//create character
+// create character
 const createCharacter = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/api/createCharacter`, {
     method: 'POST',
@@ -55,7 +56,7 @@ const createCharacter = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-//update character
+// update character
 const updateCharacter = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/api/updateCharacter/${payload.id}`, {
     method: 'PATCH',

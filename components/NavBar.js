@@ -8,25 +8,35 @@ import {
   Button,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
+// import SearchBar from './SearchBar';
 
 export default function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar
+      style={{ background: '#71797E' }}
+      collapseOnSelect
+      expand="lg"
+      bg="darkgrey"
+      variant="dark"
+    >
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>CHANGE ME</Navbar.Brand>
+          <Navbar.Brand>Faeruns Fantastical Managment</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             {/* CLOSE NAVBAR ON LINK SELECTION: https://stackoverflow.com/questions/72813635/collapse-on-select-react-bootstrap-navbar-with-nextjs-not-working */}
             <Link passHref href="/">
-              <Nav.Link>Home</Nav.Link>
+              <Nav.Link>All Campaigns</Nav.Link>
             </Link>
-            <Link passHref href="/delete-me">
-              <Nav.Link>Delete Me</Nav.Link>
+            <Nav.Link href="https://picsart.com/ai-art-generator" target="_blank" rel="noopener noreferrer">
+              Create Campaign
+            </Nav.Link>
+            <Link passHref href="/myCampaign/new">
+              <Nav.Link>Add Campaign</Nav.Link>
             </Link>
-            <Button variant="danger" onClick={signOut}>
+            <Button style={{ background: 'green' }} variant="danger" onClick={signOut}>
               Sign Out
             </Button>
           </Nav>

@@ -3,20 +3,20 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-//get all classes
+// get all classes
 const getClass = () => new Promise((resolve, reject) => {
-    fetch(`${endpoint}/api/allClasses`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => resolve(Object.values(data)))
-      .catch(reject);
-  });
+  fetch(`${endpoint}/api/allClasses`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
 
-//get single character
+// get single character
 const getSingleClass = (id) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/api/singleClass/${id}`, {
     method: 'GET',
@@ -31,5 +31,5 @@ const getSingleClass = (id) => new Promise((resolve, reject) => {
 
 export {
   getClass,
-  getSingleClass
+  getSingleClass,
 };
